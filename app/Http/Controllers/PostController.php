@@ -18,7 +18,9 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048' // Validate image file types and size
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image file types and size
+
+
         ]);
 
         // Handle file upload
@@ -30,14 +32,16 @@ class PostController extends Controller
             $imageName = null;
         }
 
-        // Create a new Post instance
         $post = new Post();
         $post->title = $request->title;
         $post->content = $request->content;
-        $post->image = $imageName; // Set image filename
+        $post->image = $imageName;
+        $post->facebook_url = $request->facebook_url??"";
+        $post->instagram_url = $request->instagram_url??"";
+        $post->linkedin_url = $request->linkedin_url??"";
+        $post->twitter_url = $request->twitter_url??"";
         $post->save();
 
-        // Redirect back with success message
         return redirect()->route('admin.posts.index')->with('success', 'Post created successfully.');
     }
 
@@ -82,6 +86,10 @@ class PostController extends Controller
             'title' => 'required|max:255',
             'content' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'facebook_url' => 'nullable|url',
+            'instagram_url' => 'nullable|url',
+            'linkedin_url' => 'nullable|url',
+            'twitter_url' => 'nullable|url',
         ]);
 
         $post->title = $request->title;
@@ -93,6 +101,10 @@ class PostController extends Controller
             $image->move(public_path('images'), $imageName);
             $post->image = $imageName;
         }
+        $post->facebook_url = $request->facebook_url;
+        $post->instagram_url = $request->instagram_url;
+        $post->linkedin_url = $request->linkedin_url;
+        $post->twitter_url = $request->twitter_url;
 
         $post->save();
 
@@ -102,7 +114,19 @@ class PostController extends Controller
 
     public function destroy($id)
     {
-        // Logic to delete a post can be added here if needed
-        return redirect()->route('admin.posts');
+        $post = Post::findOrFail($id);
+
+        // Check if post exists
+        if (!$post) {
+            return redirect()->route('admin.posts.index')->with('error', 'Post not found.');
+        }
+
+        // Delete the post
+        $post->delete();
+
+        // Flash a success message
+        return redirect()->route('admin.posts.index')->with('success', 'Post deleted successfully.');
     }
+
+
 }

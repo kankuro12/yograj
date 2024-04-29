@@ -84,14 +84,14 @@ class SettingController extends Controller
             $facebookLink = $request->facebook_link ?? '';
             $instagramLink = $request->instagram_link ?? '';
             $linkedinLink = $request->linkedin_link ?? '';
-            $youtubeLink = $request->youtube_link ?? '';
+            $twitterLink = $request->twitter_link ?? '';
 
             Helper::setSetting('footer_heading_logo', $footerHeadingLogo);
             Helper::setSetting('footer_paragraph', $footerParagraph);
             Helper::setSetting('facebook_link', $facebookLink);
             Helper::setSetting('instagram_link', $instagramLink);
             Helper::setSetting('linkedin_link', $linkedinLink);
-            Helper::setSetting('youtube_link', $youtubeLink);
+            Helper::setSetting('twitter_link', $twitterLink);
 
 
             $data = Helper::getFooterSetting();

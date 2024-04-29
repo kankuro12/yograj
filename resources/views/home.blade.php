@@ -5,8 +5,9 @@
     @php
         $data=App\Helper::getHomeSetting();
     @endphp
+
         <div class="row">
-            <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 order-1 order-md-0">
                 <div class="first-div">
                     <h1 id="heading">{!! $data->title !!}</h1>
                     <p>
@@ -24,11 +25,12 @@
 
                 </div>
             </div>
-            <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="col-xxl-6 col-xl-6 col-md-6 col-sm-12 col-xs-12 order-0 order-md-1 p-0">
                 <div class="second-div"> <img src="{{asset( $data->image)}}" alt="Bg-Image">
 
                 </div>
             </div>
         </div>
+
     </div>
 @endsection

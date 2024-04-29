@@ -20,6 +20,25 @@
             <input type="file" class="form-control-file" id="image" name="image">{{ $post->image }}
             <img src="{{ asset('images/' . $post->image) }}" alt="{{ $post->title }}" style="max-width: 200px;">
         </div>
+        <!-- Social Media URL Inputs -->
+        <div class="row">
+        <div class="form-group col-md-6">
+            <label for="facebook_url">Facebook URL</label>
+            <input type="url" class="form-control" id="facebook_url" name="facebook_url" value="{{ $post->facebook_url }}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="instagram_url">Instagram URL</label>
+            <input type="url" class="form-control" id="instagram_url" name="instagram_url" value="{{ $post->instagram_url }}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="linkedin_url">LinkedIn URL</label>
+            <input type="url" class="form-control" id="linkedin_url" name="linkedin_url" value="{{ $post->linkedin_url }}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="twitter_url">Twitter URL</label>
+            <input type="url" class="form-control" id="twitter_url" name="twitter_url" value="{{ $post->twitter_url }}">
+        </div>
+    </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>

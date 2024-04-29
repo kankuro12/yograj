@@ -21,7 +21,7 @@
                             <li><a href="https://www.facebook.com/{!!$data->facebook_link!!}" class="fa fa-facebook text-white" style="text-decoration: none;"></a></li>
                             <li><a href="https://www.linkedin.com/{!!$data->linkedin_link!!}" class="fa fa-linkedin text-white" style="text-decoration: none;"></a></li>
                             <li><a href="https://www.instagram.com/{!!$data->instagram_link!!}" class="fa fa-instagram text-white" style="text-decoration: none;"></a></li>
-                            <li><a href="https://www.youtube.com/{!!$data->youtube_link!!}" class="fa fa-youtube text-white" style="text-decoration: none;"></a></li>
+                            <li><a href="https://www.twitter.com/{!!$data->twitter_link!!}" class="fa fa-twitter text-white" style="text-decoration: none;"></a></li>
                         </ul>
                     </div>
                     <div class="col-md-4">

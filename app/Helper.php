@@ -63,7 +63,7 @@ class Helper{
         'facebook_link' => self::getSetting('facebook_link') ?? '',
         'instagram_link' => self::getSetting('instagram_link') ?? '',
         'linkedin_link' => self::getSetting('linkedin_link') ?? '',
-        'youtube_link' => self::getSetting('youtube_link') ?? '',
+        'twitter_link' => self::getSetting('twitter_link') ?? '',
     ];
 }
 

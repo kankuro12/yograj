@@ -234,12 +234,12 @@ body{
 
 
                 li {
-                    font-size: 25px;
+                    font-size: 20px;
                     margin-bottom: 10px;
                     display: flex;
                     align-items: center;
 
-                    .fa-square {
+                    .fa-check-circle {
                         font-size: 25px;
                         margin-right: 10px;
                         color: #FF8976;
@@ -463,6 +463,14 @@ body{
 $breakpoint-tablet: 768px;
 @media (max-width: $breakpoint-tablet) {
 
+    #heading{
+        font-size: 30px !important;
+    }
+    .datas{
+        display: none !important;
+
+    }
+
     .navbar{
         padding: 0;
         .container-fluid{
@@ -518,6 +526,8 @@ $breakpoint-tablet: 768px;
     }
     .main{
         .first-div{
+            padding: 0px;
+
 
             .hire{
 
@@ -534,7 +544,6 @@ $breakpoint-tablet: 768px;
 
         img{
             width:100%;
-            padding: 20px;
         }
 
     }

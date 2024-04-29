@@ -35,7 +35,7 @@
                 <h2>Skills</h2>
                 <ul class="skills">
                     @foreach($data->skills as $skill)
-                        <li><i class="fa-solid fa-square"></i> {!! $skill !!}</li>
+                        <li><i class="fa fa-check-circle"></i> {!! $skill !!}</li>
                     @endforeach
                 </ul>
             </div>
